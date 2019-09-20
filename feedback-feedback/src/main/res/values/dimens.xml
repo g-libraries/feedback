@@ -9,6 +9,7 @@
     <dimen name="feedback_title_margin_bottom">@dimen/_5sdp</dimen>
     <dimen name="feedback_rounded_btn_height">@dimen/_48sdp</dimen>
     <dimen name="feedback_et_height">@dimen/_100sdp</dimen>
+    <dimen name="feedback_et_padding_top">@dimen/_5sdp</dimen>
     <dimen name="feedback_photo_btn_image_padding">@dimen/_5sdp</dimen>
     <dimen name="feedback_photo_btn_padding_left_right">@dimen/_20sdp</dimen>
     <dimen name="feedback_et_text_size">16sp</dimen>

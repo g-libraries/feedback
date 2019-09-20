@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        style="@style/FeedbackLayout">
+    style="@style/FeedbackLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <TextView
-            android:id="@+id/dialog_fragment_feedback_title"
-            style="@style/FeedbackTitle" />
+        android:id="@+id/dialog_fragment_feedback_title"
+        style="@style/FeedbackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
-            android:id="@+id/dialog_fragment_feedback_button_review"
-            style="?FeedbackRoundedButton"
-            android:text="@string/feedback_rating_btn"
-            android:textColor="@color/feedback_text" />
+        android:id="@+id/dialog_fragment_feedback_button_review"
+        style="?feedbackRoundedButton"
+        android:layout_width="match_parent"
+        android:text="@string/feedback_rating_btn" />
 
     <Button
-            android:id="@+id/dialog_fragment_feedback_button_rating"
-            style="?FeedbackRoundedButton"
-            android:text="@string/feedback_review_btn"
-            android:textColor="@color/feedback_text" />
+        android:id="@+id/dialog_fragment_feedback_button_rating"
+        style="?feedbackRoundedButton"
+        android:layout_width="match_parent"
+        android:text="@string/feedback_review_btn" />
 
     <TextView
-            style="@style/HelveticaRegularTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/feedback_medium_padding"
-            android:layout_marginTop="@dimen/feedback_small_padding"
-            android:layout_marginEnd="@dimen/feedback_medium_padding"
-            android:textAlignment="center"
-            android:text="@string/feedback_message"
-            android:textColor="@color/feedback_hint"
-            android:textSize="@dimen/feedback_hint_text_size" />
+        android:id="@+id/dialog_fragment_feedback_message"
+        style="?feedbackHintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/feedback_message" />
 
     <include layout="@layout/dialog_feedback_partial_buttons" />
 

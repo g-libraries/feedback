@@ -2,16 +2,19 @@
 <resources>
 
     <style name="AppThemeLight" parent="android:Theme.Material.Light">
-<!--        Add custom styles in app like this-->
-<!--        <item name="FeedbackLayout">@style/FeedbackLayout</item>-->
-<!--        <item name="FeedbackTitle">@style/FeedbackTitle</item>-->
-<!--        <item name="FeedbackEditText">@style/FeedbackEditText</item>-->
-<!--        <item name="FeedbackRatingBar">@style/FeedbackRatingBar</item>-->
-<!--        <item name="FeedbackRoundedButton">@style/FeedbackRoundedButton</item>-->
-<!--        <item name="FeedbackSendRoundedButton">@style/FeedbackSendRoundedButton</item>-->
+        <!--        Add custom styles in app like this in your APP styles.xml:-->
+        <!--        <item name="style name from attrs in LIBRARY">@style/your custom style in APP styles.xml</item>-->
+
+        <!--        Examples:-->
+        <!--        <item name="feedbackLayout">@style/FeedbackLayout</item>-->
+        <!--        <item name="feedbackTitle">@style/FeedbackTitle</item>-->
+        <!--        <item name="feedbackEditText">@style/FeedbackEditText</item>-->
+        <!--        <item name="feedbackRatingBar">@style/FeedbackRatingBar</item>-->
+        <!--        <item name="feedbackRoundedButton">@style/FeedbackRoundedButton</item>-->
+        <!--        <item name="feedbackSendRoundedButton">@style/FeedbackSendRoundedButton</item>-->
     </style>
 
-<!--Default styles-->
+    <!--Default styles-->
     <style name="HelveticaRegularTextView" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/helvetica_neue_regular</item>
     </style>
@@ -25,19 +28,13 @@
     </style>
 
     <style name="FeedbackLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/feedback_dialog_bg</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:orientation">vertical</item>
         <item name="android:paddingStart">@dimen/feedback_medium_padding</item>
         <item name="android:paddingTop">@dimen/feedback_medium_padding</item>
         <item name="android:paddingEnd">@dimen/feedback_medium_padding</item>
     </style>
 
     <style name="FeedbackTitle" parent="HelveticaBoldTextView">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/feedback_title</item>
         <item name="android:textSize">@dimen/feedback_title_text_size</item>
         <item name="android:textColor">@color/feedback_text</item>
@@ -45,17 +42,22 @@
     </style>
 
     <style name="FeedbackEditText" parent="HelveticaRegularTextView">
-        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/feedback_et_height</item>
         <item name="android:background">@drawable/feedback_et_bg</item>
-        <item name="android:gravity">top|start</item>
         <item name="android:hint">@string/feedback_hint</item>
-        <item name="android:padding">@dimen/_5sdp</item>
+        <item name="android:padding">@dimen/feedback_et_padding_top</item>
         <item name="android:maxLength">500</item>
-        <item name="android:textAlignment">gravity</item>
         <item name="android:textColor">@color/feedback_text</item>
         <item name="android:textColorHint">@color/feedback_hint</item>
         <item name="android:textSize">@dimen/feedback_et_text_size</item>
+    </style>
+
+    <style name="FeedbackHintText" parent="HelveticaRegularTextView">
+        <item name="android:layout_marginStart">@dimen/feedback_medium_padding</item>
+        <item name="android:layout_marginTop">@dimen/feedback_small_padding</item>
+        <item name="android:layout_marginEnd">@dimen/feedback_medium_padding</item>
+        <item name="android:textColor">@color/feedback_hint</item>
+        <item name="android:textSize">@dimen/feedback_hint_text_size</item>
     </style>
 
     <style name="FeedbackRatingBar" parent="@android:style/Widget.RatingBar">
@@ -67,8 +69,7 @@
         <item name="android:stepSize">1</item>
     </style>
 
-    <style name="FeedbackRoundedButton">
-        <item name="android:layout_width">match_parent</item>
+    <style name="FeedbackRoundedButton" parent="HelveticaRegularTextView">
         <item name="android:fontFamily">@font/open_sans_regular</item>
         <item name="android:layout_height">@dimen/feedback_rounded_btn_height</item>
         <item name="android:textColor">@drawable/button_text_color_selector</item>
@@ -76,6 +77,18 @@
         <item name="android:background">@drawable/button_rounded_disabled</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:enabled">true</item>
+    </style>
+
+    <style name="FeedbackPhotoButton" parent="HelveticaRegularTextView">
+        <item name="android:layout_marginTop">@dimen/feedback_small_padding</item>
+        <item name="android:layout_marginBottom">@dimen/feedback_default_padding</item>
+        <item name="android:background">@drawable/feedback_photo_btn_bg</item>
+        <item name="android:drawableStart">@drawable/ic_photo</item>
+        <item name="android:drawablePadding">@dimen/feedback_photo_btn_image_padding</item>
+        <item name="android:paddingStart">@dimen/feedback_photo_btn_padding_left_right</item>
+        <item name="android:paddingEnd">@dimen/feedback_photo_btn_padding_left_right</item>
+        <item name="android:text">@string/feedback_photo</item>
+        <item name="android:textColor">@color/feedback_hint</item>
     </style>
 
     <style name="FeedbackSendRoundedButton" parent="HelveticaRegularTextView">
@@ -87,6 +100,15 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">@dimen/feedback_dialog_ok_btn_text_size</item>
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="FeedbackCancelButton" parent="HelveticaRegularTextView">
+        <item name="android:layout_marginBottom">@dimen/feedback_dialog_ok_btn_vert_padding</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:paddingLeft">@dimen/feedback_dialog_ok_btn_hor_padding</item>
+        <item name="android:paddingRight">@dimen/feedback_dialog_ok_btn_hor_padding</item>
+        <item name="android:text">@string/cancel</item>
+        <item name="android:textColor">@color/feedback_hint</item>
     </style>
 
 </resources>

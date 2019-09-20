@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/dialog_fragment_feedback_ll_buttons"
+    android:id="@+id/dialog_fragment_feedback_ll_buttons"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/dialog_fragment_feedback_button_send"
+        style="?feedbackSendRoundedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:text="@string/send" />
 
     <Button
-            android:id="@+id/dialog_fragment_feedback_button_send"
-            style="?FeedbackRoundedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/send" />
-
-    <Button
-            android:id="@+id/dialog_fragment_feedback_button_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/feedback_dialog_ok_btn_vert_padding"
-            android:background="#00000000"
-            android:paddingLeft="@dimen/feedback_dialog_ok_btn_hor_padding"
-            android:paddingRight="@dimen/feedback_dialog_ok_btn_hor_padding"
-            android:text="@string/cancel"
-            android:textAllCaps="false"
-            android:textColor="@color/feedback_hint" />
+        android:id="@+id/dialog_fragment_feedback_button_cancel"
+        style="?feedbackCancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false" />
 
 </LinearLayout>

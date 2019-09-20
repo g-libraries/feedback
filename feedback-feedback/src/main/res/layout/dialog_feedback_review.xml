@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        style="@style/FeedbackLayout">
+    style="?feedbackLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <TextView
-            android:id="@+id/dialog_fragment_feedback_title"
-            style="?FeedbackTitle" />
+        android:id="@+id/dialog_fragment_feedback_title"
+        style="?feedbackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <EditText
-            android:id="@+id/dialog_fragment_feedback_et_review"
-            style="?FeedbackEditText" />
+        android:id="@+id/dialog_fragment_feedback_et_review"
+        style="?feedbackEditText"
+        android:layout_width="match_parent"
+        android:gravity="top|start"
+        android:textAlignment="gravity" />
 
     <Button
-            android:id="@+id/dialog_fragment_feedback_button_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/feedback_small_padding"
-            android:layout_marginBottom="@dimen/feedback_default_padding"
-            android:background="@drawable/feedback_photo_btn_bg"
-            android:drawableStart="@drawable/ic_photo"
-            android:drawablePadding="@dimen/feedback_photo_btn_image_padding"
-            android:paddingStart="@dimen/feedback_photo_btn_padding_left_right"
-            android:paddingEnd="@dimen/feedback_photo_btn_padding_left_right"
-            android:text="@string/feedback_photo"
-            android:textAllCaps="false"
-            android:textColor="@color/feedback_hint" />
+        android:id="@+id/dialog_fragment_feedback_button_photo"
+        style="?feedbackPhotoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false" />
 
     <include layout="@layout/dialog_feedback_partial_buttons" />
 
