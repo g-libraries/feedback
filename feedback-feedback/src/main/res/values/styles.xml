@@ -9,9 +9,12 @@
         <!--        <item name="feedbackLayout">@style/FeedbackLayout</item>-->
         <!--        <item name="feedbackTitle">@style/FeedbackTitle</item>-->
         <!--        <item name="feedbackEditText">@style/FeedbackEditText</item>-->
+        <!--        <item name="feedbackHintText">@style/FeedbackRatingBar</item>-->
         <!--        <item name="feedbackRatingBar">@style/FeedbackRatingBar</item>-->
         <!--        <item name="feedbackRoundedButton">@style/FeedbackRoundedButton</item>-->
+        <!--        <item name="feedbackPhotoButton">@style/FeedbackRoundedButton</item>-->
         <!--        <item name="feedbackSendRoundedButton">@style/FeedbackSendRoundedButton</item>-->
+        <!--        <item name="feedbackCancelButton">@style/FeedbackSendRoundedButton</item>-->
     </style>
 
     <!--Default styles-->
