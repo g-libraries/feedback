@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">feedback</string>
+
+    <string name="feedback_rating_btn">Rate us</string>
+    <string name="feedback_review_btn">Send feedback</string>
+    <string name="feedback_title">Leave Feedback</string>
+    <string name="feedback_message">Rate us and get 50 ponus points on your bonus card</string>
+    <string name="feedback_rating">Rating</string>
+    <string name="feedback_hint">Please input your feedback here</string>
+    <string name="feedback_photo">Add photo.jpeg</string>
+
+    <string name="send">Send</string>
+    <string name="cancel">Cancel</string>
+</resources>

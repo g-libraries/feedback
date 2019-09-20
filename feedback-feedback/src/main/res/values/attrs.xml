@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="FeedbackLayout" format="reference"/>
+    <attr name="FeedbackTitle" format="reference"/>
+    <attr name="FeedbackEditText" format="reference"/>
+    <attr name="FeedbackRatingBar" format="reference"/>
+    <attr name="FeedbackRoundedButton" format="reference"/>
+    <attr name="FeedbackSendRoundedButton" format="reference"/>
+</resources>

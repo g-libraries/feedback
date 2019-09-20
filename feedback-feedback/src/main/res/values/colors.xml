@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="btn_text_enabled">#FEFFFE</color>
+    <color name="btn_text_disabled">#A0A1A0</color>
+    <color name="btn_bg_disabled">#F3F4F6</color>
+
+    <color name="feedback_text">#131415</color>
+    <color name="feedback_hint">#3B000000</color>
+    <color name="feedback_photo_btn_background">#EA74EC</color>
+
+    <color name="feedback_btn_gradient_start">#FFF578EA</color>
+    <color name="feedback_btn_gradient_end">#FF9257FC</color>
+</resources>

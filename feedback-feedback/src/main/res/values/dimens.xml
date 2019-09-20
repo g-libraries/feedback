@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="feedback_default_padding">@dimen/_16sdp</dimen>
+    <dimen name="feedback_small_padding">@dimen/_12sdp</dimen>
+    <dimen name="feedback_medium_padding">@dimen/_20sdp</dimen>
+    <dimen name="feedback_large_padding">@dimen/_22sdp</dimen>
+    <dimen name="feedback_title_text_size">@dimen/_13sdp</dimen>
+    <dimen name="feedback_hint_text_size">@dimen/_10sdp</dimen>
+    <dimen name="feedback_title_margin_bottom">@dimen/_5sdp</dimen>
+    <dimen name="feedback_rounded_btn_height">@dimen/_48sdp</dimen>
+    <dimen name="feedback_et_height">@dimen/_100sdp</dimen>
+    <dimen name="feedback_photo_btn_image_padding">@dimen/_5sdp</dimen>
+    <dimen name="feedback_photo_btn_padding_left_right">@dimen/_20sdp</dimen>
+    <dimen name="feedback_et_text_size">16sp</dimen>
+    <dimen name="feedback_dialog_ok_btn_text_size">@dimen/_12sdp</dimen>
+
+    <dimen name="feedback_dialog_ok_btn_hor_padding">@dimen/_35sdp</dimen>
+    <dimen name="feedback_dialog_ok_btn_vert_padding">@dimen/_14sdp</dimen>
+    <dimen name="feedback_dialog_ok_btn_margin_top">@dimen/_20sdp</dimen>
+</resources>

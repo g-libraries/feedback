@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/FeedbackLayout">
+
+    <TextView
+            android:id="@+id/dialog_fragment_feedback_title"
+            style="?FeedbackTitle" />
+
+    <EditText
+            android:id="@+id/dialog_fragment_feedback_et_review"
+            style="?FeedbackEditText"/>
+
+    <RatingBar
+            android:id="@+id/dialog_fragment_feedback_ratingbar"
+            style="?FeedbackRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="1" />
+
+
+    <!--    <LinearLayout-->
+<!--            android:id="@+id/dialog_fragment_feedback_ll_rating"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_marginTop="20dp"/>-->
+
+    <TextView
+            android:id="@+id/dialog_fragment_feedback_tv_rating_hint"
+            style="@style/HelveticaRegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/feedback_small_padding"
+            android:layout_marginBottom="@dimen/feedback_default_padding"
+            android:text="@string/feedback_rating"
+            android:textColor="@color/feedback_hint"
+            android:textSize="@dimen/feedback_hint_text_size"/>
+
+    <include layout="@layout/dialog_feedback_partial_buttons" />
+
+</LinearLayout>
