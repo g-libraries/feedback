@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/FeedbackLayout"
+    style="?feedbackLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/dialog_fragment_feedback_title"
-        style="@style/FeedbackTitle"
+        style="?feedbackTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
