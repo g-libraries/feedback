@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <EditText
+    <com.hanks.lineheightedittext.LineHeightEditText
         android:id="@+id/dialog_fragment_feedback_et_review"
         style="?feedbackEditText"
         android:layout_width="match_parent"
