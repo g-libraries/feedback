@@ -9,7 +9,9 @@ import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.*
 import kotlinx.android.synthetic.main.dialog_feedback_partial_buttons.view.*
+import kotlinx.android.synthetic.main.dialog_feedback_rating.view.*
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.dialog_fragment_feedback_et_review
+import kotlinx.android.synthetic.main.dialog_feedback_review.view.dialog_fragment_feedback_title
 
 
 class FeedbackReviewDialog(
@@ -41,6 +43,7 @@ class FeedbackReviewDialog(
 
         photoBTN = view.dialog_fragment_feedback_button_photo
 
+        view.dialog_fragment_feedback_title.text = title
         photoBTN.text = photoBtnText
         view.dialog_fragment_feedback_et_review.hint = reviewHint
         view.dialog_fragment_feedback_button_send.text = okBtnText
