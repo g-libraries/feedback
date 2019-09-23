@@ -49,6 +49,7 @@
         <item name="android:background">@drawable/feedback_et_bg</item>
         <item name="android:hint">@string/feedback_hint</item>
         <item name="android:padding">@dimen/feedback_default_padding</item>
+        <item name="android:lineSpacingExtra">@dimen/_5sdp</item>
         <item name="android:maxLength">400</item>
         <item name="android:textColor">@color/feedback_text</item>
         <item name="android:textColorHint">@color/feedback_hint</item>
