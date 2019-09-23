@@ -36,12 +36,6 @@ class FeedbackRatingDialog(
 
         val view = inflater.inflate(R.layout.dialog_feedback_rating, container, false)
 
-//        val ratingLayout = view.dialog_fragment_feedback_ll_rating
-//        val contextThemeWrapper = ContextThemeWrapper(context, ratingStyleId)
-//        val rating = RatingBar(contextThemeWrapper, null, 0)
-//
-//        ratingLayout.addView(rating)
-
         view.dialog_fragment_feedback_et_review.hint = reviewHint
         view.dialog_fragment_feedback_tv_rating_hint.text = ratingHint
         view.dialog_fragment_feedback_button_send.text = okBtnText
