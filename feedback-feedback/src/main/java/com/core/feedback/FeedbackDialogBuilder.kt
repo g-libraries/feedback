@@ -11,32 +11,26 @@ class FeedbackDialogBuilder {
         var ratingBtnText: String?,
         var reviewBtnText: String?,
         var onItemClickAction: (pos: Int) -> Unit
-//        ,
-
-        // Default params, can set in Constructor or change manually
-//        var backgroundDrawableId: Int? = null,
-//        var selectionBtnDrawableId: Int? = null
+        // You can also add some params for styling, now styling is performed in styles.xml
+        // var backgroundDrawableId: Int? = null,
+        // var selectionBtnDrawableId: Int? = null
     ) : Dialog() {
-
-//        fun backgroundDrawableId(backgroundDrawableId: Int?) = apply { this.backgroundDrawableId = backgroundDrawableId }
-//        fun selectionBtnDrawableId(selectionBtnStyleId: Int?) = apply { this.selectionBtnDrawableId = selectionBtnDrawableId }
-
+        // fun backgroundDrawableId(backgroundDrawableId: Int?) = apply { this.backgroundDrawableId = backgroundDrawableId }
+        // fun selectionBtnDrawableId(selectionBtnStyleId: Int?) = apply { this.selectionBtnDrawableId = selectionBtnDrawableId }
         override fun build() = FeedbackDialog(
             title,
             ratingBtnText,
             reviewBtnText,
             onItemClickAction,
             closeBtnText
-//            ,
-//            backgroundDrawableId,
-//            selectionBtnDrawableId
+            // backgroundDrawableId,
+            // selectionBtnDrawableId
         )
     }
 
     inner class Rating(
         override var title: String?,
         override var reviewHint: String?,
-//        override var ratingStyleId: Int,
         override var ratingHint: String?,
         override var okBtnText: String?,
         override var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
@@ -45,7 +39,6 @@ class FeedbackDialogBuilder {
         override fun build() = FeedbackRatingDialog(
             title,
             reviewHint,
-//            ratingStyleId,
             ratingHint,
             okBtnText,
             onOkBtnClickAction,
