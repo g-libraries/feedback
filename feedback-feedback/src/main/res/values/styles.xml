@@ -41,15 +41,15 @@
         <item name="android:text">@string/feedback_title</item>
         <item name="android:textSize">@dimen/feedback_title_text_size</item>
         <item name="android:textColor">@color/feedback_text</item>
-        <item name="android:layout_marginBottom">@dimen/feedback_title_margin_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/feedback_default_padding</item>
     </style>
 
     <style name="FeedbackEditText" parent="HelveticaRegularTextView">
         <item name="android:layout_height">@dimen/feedback_et_height</item>
         <item name="android:background">@drawable/feedback_et_bg</item>
         <item name="android:hint">@string/feedback_hint</item>
-        <item name="android:padding">@dimen/feedback_et_padding_top</item>
-        <item name="android:maxLength">500</item>
+        <item name="android:padding">@dimen/feedback_default_padding</item>
+        <item name="android:maxLength">400</item>
         <item name="android:textColor">@color/feedback_text</item>
         <item name="android:textColorHint">@color/feedback_hint</item>
         <item name="android:textSize">@dimen/feedback_et_text_size</item>
@@ -66,6 +66,7 @@
 
     <style name="FeedbackRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/feedback_ratingbar</item>
+        <item name="android:layout_marginTop">@dimen/feedback_small_padding</item>
         <item name="android:minHeight">@dimen/_20sdp</item>
         <item name="android:maxHeight">@dimen/_25sdp</item>
         <item name="android:numStars">5</item>
@@ -76,6 +77,7 @@
     <style name="FeedbackRoundedButton" parent="HelveticaRegularTextView">
         <item name="android:fontFamily">@font/open_sans_regular</item>
         <item name="android:layout_height">@dimen/feedback_rounded_btn_height</item>
+        <item name="android:layout_marginBottom">@dimen/feedback_small_padding</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">@dimen/feedback_dialog_ok_btn_text_size</item>
         <item name="android:background">@drawable/button_rounded_disabled</item>
