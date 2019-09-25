@@ -99,6 +99,8 @@
     </style>
 
     <style name="FeedbackSendRoundedButton" parent="HelveticaRegularTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/round_gradient_btn</item>
         <item name="android:paddingRight">@dimen/feedback_dialog_ok_btn_hor_padding</item>
         <item name="android:paddingLeft">@dimen/feedback_dialog_ok_btn_hor_padding</item>
@@ -110,6 +112,8 @@
     </style>
 
     <style name="FeedbackCancelButton" parent="HelveticaRegularTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/feedback_dialog_ok_btn_vert_padding</item>
         <item name="android:background">#00000000</item>
         <item name="android:paddingLeft">@dimen/feedback_dialog_ok_btn_hor_padding</item>
