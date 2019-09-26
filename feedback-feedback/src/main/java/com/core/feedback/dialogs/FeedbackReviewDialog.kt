@@ -49,7 +49,7 @@ class FeedbackReviewDialog(
 
         val photoBTN = view.dialog_fragment_feedback_button_photo
 
-        attachListeners(view.dialog_fragment_feedback_et_review, photoBTN)
+        attachListeners(view.dialog_fragment_feedback_et_review)
 
         photoBTN.setOnOneClickListener {
             onPhotoBtnClickAction.invoke()
@@ -68,6 +68,7 @@ class FeedbackReviewDialog(
     fun setPhotoBTNText(text: String) {
         photoBTN.text = text
         imageSelected = true
+        fieldChanged()
     }
 
     override fun fieldChanged() {
