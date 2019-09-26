@@ -1,4 +1,4 @@
-package com.core.feedback
+package com.core.feedback.dialogs
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
+import com.core.feedback.R
+import com.core.feedback.interfaces.setOnOneClickListener
 import kotlinx.android.synthetic.main.dialog_feedback_partial_buttons.view.*
 import kotlinx.android.synthetic.main.dialog_feedback.view.*
 

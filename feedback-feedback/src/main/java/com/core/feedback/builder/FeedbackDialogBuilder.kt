@@ -1,6 +1,9 @@
-package com.core.feedback
+package com.core.feedback.builder
 
 import androidx.fragment.app.DialogFragment
+import com.core.feedback.dialogs.FeedbackDialog
+import com.core.feedback.dialogs.FeedbackRatingDialog
+import com.core.feedback.dialogs.FeedbackReviewDialog
 
 
 class FeedbackDialogBuilder {

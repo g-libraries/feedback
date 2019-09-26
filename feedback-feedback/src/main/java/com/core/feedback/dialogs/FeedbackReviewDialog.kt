@@ -1,4 +1,4 @@
-package com.core.feedback
+package com.core.feedback.dialogs
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -9,9 +9,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
+import com.core.feedback.R
+import com.core.feedback.interfaces.OnValidationListeners
+import com.core.feedback.interfaces.setOnOneClickListener
+import com.hanks.lineheightedittext.LineHeightEditText
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.*
 import kotlinx.android.synthetic.main.dialog_feedback_partial_buttons.view.*
-import kotlinx.android.synthetic.main.dialog_feedback_rating.view.*
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.dialog_fragment_feedback_et_review
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.dialog_fragment_feedback_title
 
@@ -23,9 +26,12 @@ class FeedbackReviewDialog(
     var onPhotoBtnClickAction: () -> Unit,
     var okBtnText: String?,
     var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
-    var closeBtnText: String?) : DialogFragment() {
+    var closeBtnText: String?) : DialogFragment(), OnValidationListeners {
 
-    lateinit var photoBTN: Button
+    private lateinit var reviewET: LineHeightEditText
+    private lateinit var photoBTN: Button
+    private lateinit var sendBTN: Button
+    private var imageSelected: Boolean = false
 
     override fun onStart() {
         super.onStart()
@@ -45,16 +51,20 @@ class FeedbackReviewDialog(
         val view = inflater.inflate(R.layout.dialog_feedback_review, container, false)
 
         photoBTN = view.dialog_fragment_feedback_button_photo
+        sendBTN = view.dialog_fragment_feedback_button_send
+        reviewET = view.dialog_fragment_feedback_et_review
 
         view.dialog_fragment_feedback_title.text = title
         photoBTN.text = photoBtnText
-        view.dialog_fragment_feedback_et_review.hint = reviewHint
-        view.dialog_fragment_feedback_button_send.text = okBtnText
+        reviewET.hint = reviewHint
+        sendBTN.text = okBtnText
         view.dialog_fragment_feedback_button_cancel.text = closeBtnText
 
         view.dialog_fragment_feedback_button_send.isEnabled = true
 
         val photoBTN = view.dialog_fragment_feedback_button_photo
+
+        attachListeners(view.dialog_fragment_feedback_et_review, photoBTN)
 
         photoBTN.setOnOneClickListener {
             onPhotoBtnClickAction.invoke()
@@ -71,5 +81,11 @@ class FeedbackReviewDialog(
 
     fun setPhotoBTNText(text: String) {
         photoBTN.text = text
+        imageSelected = true
+    }
+
+    override fun fieldChanged() {
+        // Validation
+        sendBTN.isEnabled = reviewET.text?.isNotEmpty() ?: false || imageSelected
     }
 }
