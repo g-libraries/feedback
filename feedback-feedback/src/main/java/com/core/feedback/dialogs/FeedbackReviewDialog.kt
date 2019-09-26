@@ -41,7 +41,7 @@ class FeedbackReviewDialog(
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        setStyle(STYLE_NO_FRAME, android.R.style.Theme)
+//        setStyle(STYLE_NO_FRAME, android.R.style.Theme)
     }
 
     override fun onCreateView(
