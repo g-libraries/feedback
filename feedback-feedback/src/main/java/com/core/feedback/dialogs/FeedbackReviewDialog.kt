@@ -1,17 +1,13 @@
 package com.core.feedback.dialogs
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
-import androidx.fragment.app.DialogFragment
 import com.core.feedback.R
-import com.core.feedback.interfaces.OnValidationListeners
-import com.core.feedback.interfaces.setOnOneClickListener
+import com.core.feedback.IValidationListeners
+import com.core.feedback.setOnOneClickListener
 import com.hanks.lineheightedittext.LineHeightEditText
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.*
 import kotlinx.android.synthetic.main.dialog_feedback_partial_buttons.view.*
@@ -26,23 +22,12 @@ class FeedbackReviewDialog(
     var onPhotoBtnClickAction: () -> Unit,
     var okBtnText: String?,
     var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
-    var closeBtnText: String?) : DialogFragment(), OnValidationListeners {
+    var closeBtnText: String?) : NoBGDialogFragment(), IValidationListeners {
 
     private lateinit var reviewET: LineHeightEditText
     private lateinit var photoBTN: Button
     private lateinit var sendBTN: Button
     private var imageSelected: Boolean = false
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        dialog?.window?.setLayout(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//        setStyle(STYLE_NO_FRAME, android.R.style.Theme)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,15 +1,11 @@
 package com.core.feedback.dialogs
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.fragment.app.DialogFragment
 import com.core.feedback.R
-import com.core.feedback.interfaces.setOnOneClickListener
+import com.core.feedback.setOnOneClickListener
 import kotlinx.android.synthetic.main.dialog_feedback_partial_buttons.view.*
 import kotlinx.android.synthetic.main.dialog_feedback.view.*
 
@@ -20,21 +16,10 @@ class FeedbackDialog(
     var reviewBtnText: String?,
     var onItemClickAction: (pos: Int) -> Unit,
     var closeBtnText: String?
-) : DialogFragment() {
+) : NoBGDialogFragment() {
     companion object {
         const val REVIEW_DIALOG = 0
         const val RATING_DIALOG = 1
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        dialog?.window?.setLayout(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        setStyle(STYLE_NO_FRAME, android.R.style.Theme)
     }
 
     override fun onCreateView(

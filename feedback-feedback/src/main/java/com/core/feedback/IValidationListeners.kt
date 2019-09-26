@@ -1,11 +1,11 @@
-package com.core.feedback.interfaces
+package com.core.feedback
 
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.RatingBar
 import android.widget.TextView
 
-interface OnValidationListeners {
+interface IValidationListeners {
 
     fun attachListeners(tv: TextView, rb: RatingBar) {
         addTvTextListener(tv)
@@ -32,6 +32,7 @@ interface OnValidationListeners {
         })
     }
 
+    // Override and add logic to validate fields
     fun fieldChanged()
 
 }

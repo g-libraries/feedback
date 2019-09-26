@@ -1,4 +1,4 @@
-package com.core.feedback.interfaces
+package com.core.feedback
 
 import android.os.Handler
 import android.view.View
