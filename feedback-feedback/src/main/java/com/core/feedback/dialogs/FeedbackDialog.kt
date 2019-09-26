@@ -42,7 +42,7 @@ class FeedbackDialog(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.dialog_feedback, container, false)
+        val view = inflater.inflate(R.layout.dialog_feedback, container)
 
         view.dialog_fragment_feedback_title.text = title
         view.dialog_fragment_feedback_button_review.text = reviewBtnText

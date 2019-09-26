@@ -50,7 +50,7 @@ class FeedbackReviewDialog(
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.dialog_feedback_review, container, false)
+        val view = inflater.inflate(R.layout.dialog_feedback_review, container)
 
         photoBTN = view.dialog_fragment_feedback_button_photo
         sendBTN = view.dialog_fragment_feedback_button_send

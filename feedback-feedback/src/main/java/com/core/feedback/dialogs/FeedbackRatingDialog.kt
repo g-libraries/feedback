@@ -49,7 +49,7 @@ class FeedbackRatingDialog(
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.dialog_feedback_rating, container, false)
+        val view = inflater.inflate(R.layout.dialog_feedback_rating, container)
 
         reviewET = view.dialog_fragment_feedback_et_review
         ratingRB = view.dialog_fragment_feedback_ratingbar
