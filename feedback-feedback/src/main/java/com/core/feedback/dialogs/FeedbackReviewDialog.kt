@@ -33,13 +33,15 @@ class FeedbackReviewDialog(
     private lateinit var sendBTN: Button
     private var imageSelected: Boolean = false
 
-    override fun onStart() {
-        super.onStart()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         dialog?.window?.setLayout(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        setStyle(STYLE_NO_FRAME, android.R.style.Theme)
     }
 
     override fun onCreateView(
@@ -60,8 +62,6 @@ class FeedbackReviewDialog(
         sendBTN.text = okBtnText
         view.dialog_fragment_feedback_button_cancel.text = closeBtnText
 
-        view.dialog_fragment_feedback_button_send.isEnabled = true
-
         val photoBTN = view.dialog_fragment_feedback_button_photo
 
         attachListeners(view.dialog_fragment_feedback_et_review, photoBTN)
@@ -71,6 +71,7 @@ class FeedbackReviewDialog(
         }
 
         view.dialog_fragment_feedback_button_cancel.setOnOneClickListener { dismiss() }
+
         view.dialog_fragment_feedback_button_send.setOnOneClickListener {
             onOkBtnClickAction.invoke(0, view.dialog_fragment_feedback_et_review.text.toString())
             dismiss()

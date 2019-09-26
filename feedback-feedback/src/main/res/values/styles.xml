@@ -35,6 +35,7 @@
         <item name="android:paddingStart">@dimen/feedback_medium_padding</item>
         <item name="android:paddingTop">@dimen/feedback_medium_padding</item>
         <item name="android:paddingEnd">@dimen/feedback_medium_padding</item>
+        <item name="android:layout_margin">@dimen/feedback_small_padding</item>
     </style>
 
     <style name="FeedbackTitle" parent="HelveticaBoldTextView">
@@ -115,12 +116,14 @@
     <style name="FeedbackCancelButton" parent="HelveticaRegularTextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">@dimen/feedback_dialog_ok_btn_vert_padding</item>
         <item name="android:background">#00000000</item>
         <item name="android:paddingLeft">@dimen/feedback_dialog_ok_btn_hor_padding</item>
         <item name="android:paddingRight">@dimen/feedback_dialog_ok_btn_hor_padding</item>
+        <item name="android:paddingTop">@dimen/feedback_dialog_ok_btn_vert_padding</item>
+        <item name="android:paddingBottom">@dimen/feedback_dialog_ok_btn_vert_padding</item>
         <item name="android:text">@string/cancel</item>
         <item name="android:textColor">@color/feedback_hint</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
 </resources>

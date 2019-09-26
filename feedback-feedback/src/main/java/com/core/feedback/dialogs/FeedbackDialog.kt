@@ -20,22 +20,21 @@ class FeedbackDialog(
     var reviewBtnText: String?,
     var onItemClickAction: (pos: Int) -> Unit,
     var closeBtnText: String?
-//    ,
-//    var backgroundDrawableId: Int?,
-//    var selectionBtnDrawableId: Int?
 ) : DialogFragment() {
     companion object {
         const val REVIEW_DIALOG = 0
         const val RATING_DIALOG = 1
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         dialog?.window?.setLayout(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        setStyle(STYLE_NO_FRAME, android.R.style.Theme)
     }
 
     override fun onCreateView(
@@ -44,12 +43,6 @@ class FeedbackDialog(
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.dialog_feedback, container, false)
-
-//        backgroundDrawableId?.let { view.background = context?.getDrawable(it) }
-//        selectionBtnDrawableId?.let {
-//            view.dialog_fragment_feedback_button_review.background = context?.getDrawable(it)
-//            view.dialog_fragment_feedback_button_rating.background = context?.getDrawable(it)
-//        }
 
         view.dialog_fragment_feedback_title.text = title
         view.dialog_fragment_feedback_button_review.text = reviewBtnText

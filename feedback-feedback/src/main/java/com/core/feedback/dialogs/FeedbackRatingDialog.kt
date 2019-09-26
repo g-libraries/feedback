@@ -64,6 +64,7 @@ class FeedbackRatingDialog(
         attachListeners(view.dialog_fragment_feedback_et_review, ratingRB)
 
         view.dialog_fragment_feedback_button_cancel.setOnOneClickListener { dismiss() }
+
         view.dialog_fragment_feedback_button_send.setOnOneClickListener {
             onOkBtnClickAction.invoke(
                 view.dialog_fragment_feedback_ratingbar.rating.toInt(),
