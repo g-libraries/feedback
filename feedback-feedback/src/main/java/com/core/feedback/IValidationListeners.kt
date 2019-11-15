@@ -26,7 +26,7 @@ interface IValidationListeners {
         }
     }
 
-    fun attachListeners(tv: TextView, rg: RadioGroup? = null) {
+    fun attachListeners(tv: TextView, rg: RadioGroup?) {
         tv.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
                 fieldChanged()
