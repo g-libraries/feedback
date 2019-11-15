@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?feedbackLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_fragment_feedback_title"
+        style="?feedbackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/dialog_fragment_feedback_ratingbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dialog_fragment_feedback_button_positive"
+            android:layout_width="@dimen/feedback_icon_width_height"
+            android:layout_height="@dimen/feedback_icon_width_height"
+            android:layout_marginEnd="@dimen/feedback_default_padding"
+            android:background="@drawable/selector_feedback_positive"
+            android:button="@android:color/transparent" />
+
+        <RadioButton
+            android:id="@+id/dialog_fragment_feedback_button_neutral"
+            android:layout_width="@dimen/feedback_icon_width_height"
+            android:layout_height="@dimen/feedback_icon_width_height"
+            android:background="@drawable/selector_feedback_neutral"
+            android:button="@android:color/transparent" />
+
+        <RadioButton
+            android:id="@+id/dialog_fragment_feedback_button_negative"
+            android:layout_width="@dimen/feedback_icon_width_height"
+            android:layout_height="@dimen/feedback_icon_width_height"
+            android:layout_marginStart="@dimen/feedback_default_padding"
+            android:background="@drawable/selector_feedback_negative"
+            android:button="@android:color/transparent" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/dialog_fragment_feedback_tv_rating_hint"
+        style="?feedbackHintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_rating" />
+
+    <com.hanks.lineheightedittext.LineHeightEditText
+        android:id="@+id/dialog_fragment_feedback_et_review"
+        style="?feedbackEditText"
+        android:layout_width="match_parent"
+        android:gravity="top|start"
+        android:textAlignment="gravity" />
+
+    <include layout="@layout/dialog_feedback_partial_buttons" />
+
+</LinearLayout>

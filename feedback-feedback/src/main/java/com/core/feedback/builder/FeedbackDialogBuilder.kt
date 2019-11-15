@@ -3,6 +3,7 @@ package com.core.feedback.builder
 import androidx.fragment.app.DialogFragment
 import com.core.feedback.dialogs.FeedbackDialog
 import com.core.feedback.dialogs.FeedbackRatingDialog
+import com.core.feedback.dialogs.FeedbackRatingSmileDialog
 import com.core.feedback.dialogs.FeedbackReviewDialog
 
 
@@ -40,6 +41,24 @@ class FeedbackDialogBuilder {
         override var closeBtnText: String?
     ) : Dialog() {
         override fun build() = FeedbackRatingDialog(
+            title,
+            reviewHint,
+            ratingHint,
+            okBtnText,
+            onOkBtnClickAction,
+            closeBtnText
+        )
+    }
+
+    inner class RatingSmiles(
+        override var title: String?,
+        override var reviewHint: String?,
+        override var ratingHint: String?,
+        override var okBtnText: String?,
+        override var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
+        override var closeBtnText: String?
+    ) : Dialog() {
+        override fun build() = FeedbackRatingSmileDialog(
             title,
             reviewHint,
             ratingHint,
