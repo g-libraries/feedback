@@ -71,9 +71,18 @@ class FeedbackRatingSmileDialog(
 
         // Check what Radio Button is checked by default if any
         when {
-            positiveRB.isChecked -> rating = 2
-            neutralRB.isChecked -> rating = 1
-            negativeRB.isChecked -> rating = 0
+            negativeRB.isChecked -> {
+                rating = 0
+                fieldChanged()
+            }
+            neutralRB.isChecked -> {
+                rating = 1
+                fieldChanged()
+            }
+            positiveRB.isChecked -> {
+                rating = 2
+                fieldChanged()
+            }
         }
 
         return view
