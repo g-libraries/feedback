@@ -21,26 +21,15 @@
 
         <RadioButton
             android:id="@+id/dialog_fragment_feedback_button_positive"
-            android:layout_width="@dimen/feedback_icon_width_height"
-            android:layout_height="@dimen/feedback_icon_width_height"
-            android:layout_marginEnd="@dimen/feedback_default_padding"
-            android:background="@drawable/selector_feedback_positive"
-            android:button="@android:color/transparent" />
+            style="@style/FeedbackRatingRadioButtonPositive"/>
 
         <RadioButton
             android:id="@+id/dialog_fragment_feedback_button_neutral"
-            android:layout_width="@dimen/feedback_icon_width_height"
-            android:layout_height="@dimen/feedback_icon_width_height"
-            android:background="@drawable/selector_feedback_neutral"
-            android:button="@android:color/transparent" />
+            style="@style/FeedbackRatingRadioButtonNeutral"/>
 
         <RadioButton
             android:id="@+id/dialog_fragment_feedback_button_negative"
-            android:layout_width="@dimen/feedback_icon_width_height"
-            android:layout_height="@dimen/feedback_icon_width_height"
-            android:layout_marginStart="@dimen/feedback_default_padding"
-            android:background="@drawable/selector_feedback_negative"
-            android:button="@android:color/transparent" />
+            style="@style/FeedbackRatingRadioButtonNegative"/>
 
     </RadioGroup>
 

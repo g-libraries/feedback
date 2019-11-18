@@ -76,6 +76,27 @@
         <item name="android:stepSize">1</item>
     </style>
 
+    <style name="FeedbackRatingRadioButton">
+        <item name="android:layout_width">@dimen/feedback_rating_btn_width_height</item>
+        <item name="android:layout_height">@dimen/feedback_rating_btn_width_height</item>
+        <item name="android:button">@android:color/transparent</item>
+    </style>
+
+    <style name="FeedbackRatingRadioButtonPositive" parent="FeedbackRatingRadioButton">
+        <item name="android:background">@drawable/selector_feedback_positive</item>
+        <item name="android:checked">true</item>
+    </style>
+
+    <style name="FeedbackRatingRadioButtonNeutral" parent="FeedbackRatingRadioButton">
+        <item name="android:background">@drawable/selector_feedback_neutral</item>
+        <item name="android:layout_marginStart">@dimen/feedback_default_padding</item>
+        <item name="android:layout_marginEnd">@dimen/feedback_default_padding</item>
+    </style>
+
+    <style name="FeedbackRatingRadioButtonNegative" parent="FeedbackRatingRadioButton">
+        <item name="android:background">@drawable/selector_feedback_negative</item>
+    </style>
+
     <style name="FeedbackRoundedButton" parent="HelveticaRegularTextView">
         <item name="android:fontFamily">@font/open_sans_regular</item>
         <item name="android:layout_height">@dimen/feedback_rounded_btn_height</item>

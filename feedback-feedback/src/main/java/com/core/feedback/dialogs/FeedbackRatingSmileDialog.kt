@@ -50,9 +50,12 @@ class FeedbackRatingSmileDialog(
         view.dialog_fragment_feedback_button_cancel.text = closeBtnText
 
         // init rating buttons listener
-        view.dialog_fragment_feedback_button_negative.setOnOneClickListener { onRadioButtonClick }
-        view.dialog_fragment_feedback_button_neutral.setOnOneClickListener { onRadioButtonClick }
-        view.dialog_fragment_feedback_button_positive.setOnOneClickListener { onRadioButtonClick }
+        val negativeRB = view.dialog_fragment_feedback_button_negative
+        val neutralRB = view.dialog_fragment_feedback_button_neutral
+        val positiveRB = view.dialog_fragment_feedback_button_positive
+        negativeRB.setOnOneClickListener { onRadioButtonClick }
+        neutralRB.setOnOneClickListener { onRadioButtonClick }
+        positiveRB.setOnOneClickListener { onRadioButtonClick }
 
         attachListeners(view.dialog_fragment_feedback_et_review, ratingRG)
 
@@ -66,8 +69,12 @@ class FeedbackRatingSmileDialog(
             dismiss()
         }
 
-        // Last touch - set Positive rating as default
-        view.dialog_fragment_feedback_button_positive.callOnClick()
+        // Check what Radio Button is checked by default if any
+        when {
+            positiveRB.isChecked -> rating = 2
+            neutralRB.isChecked -> rating = 1
+            negativeRB.isChecked -> rating = 0
+        }
 
         return view
     }

@@ -14,7 +14,7 @@
     <dimen name="feedback_et_text_size">16sp</dimen>
     <dimen name="feedback_dialog_ok_btn_text_size">@dimen/_12sdp</dimen>
 
-    <dimen name="feedback_icon_width_height">@dimen/_30sdp</dimen>
+    <dimen name="feedback_rating_btn_width_height">@dimen/_30sdp</dimen>
 
     <dimen name="feedback_dialog_ok_btn_hor_padding">@dimen/_40sdp</dimen>
     <dimen name="feedback_dialog_ok_btn_vert_padding">@dimen/_14sdp</dimen>
