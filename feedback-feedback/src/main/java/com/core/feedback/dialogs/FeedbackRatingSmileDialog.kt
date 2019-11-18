@@ -95,6 +95,6 @@ class FeedbackRatingSmileDialog(
 
     override fun fieldChanged() {
         // Validation
-        sendBTN.isEnabled = rating > 0 || reviewET.text?.isNotEmpty() ?: false
+        sendBTN.isEnabled = rating >= 0 || reviewET.text?.isNotEmpty() ?: false
     }
 }
