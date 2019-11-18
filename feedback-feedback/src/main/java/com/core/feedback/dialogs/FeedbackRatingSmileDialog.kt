@@ -53,11 +53,16 @@ class FeedbackRatingSmileDialog(
         val negativeRB = view.dialog_fragment_feedback_button_negative
         val neutralRB = view.dialog_fragment_feedback_button_neutral
         val positiveRB = view.dialog_fragment_feedback_button_positive
-        negativeRB.setOnOneClickListener { onRadioButtonClick }
-        neutralRB.setOnOneClickListener { onRadioButtonClick }
-        positiveRB.setOnOneClickListener { onRadioButtonClick }
 
-        attachListeners(view.dialog_fragment_feedback_et_review, ratingRG)
+        attachListeners(view.dialog_fragment_feedback_et_review, ratingRG, object : IValidationListeners.OnRadioGroupElementClickListener {
+            override fun onClick(id: Int) {
+                when (id) {
+                    R.id.dialog_fragment_feedback_button_negative -> rating = 0
+                    R.id.dialog_fragment_feedback_button_neutral -> rating = 1
+                    R.id.dialog_fragment_feedback_button_positive -> rating = 2
+                }
+            }
+        })
 
         view.dialog_fragment_feedback_button_cancel.setOnOneClickListener { dismiss() }
 
@@ -86,14 +91,6 @@ class FeedbackRatingSmileDialog(
         }
 
         return view
-    }
-
-    private var onRadioButtonClick = { v: View ->
-        when (v.id) {
-            R.id.dialog_fragment_feedback_button_negative -> rating = 0
-            R.id.dialog_fragment_feedback_button_neutral -> rating = 1
-            R.id.dialog_fragment_feedback_button_positive -> rating = 2
-        }
     }
 
     override fun fieldChanged() {
