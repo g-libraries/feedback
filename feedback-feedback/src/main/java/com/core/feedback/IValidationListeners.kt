@@ -8,6 +8,10 @@ import android.widget.TextView
 
 interface IValidationListeners {
 
+    interface OnRadioGroupElementClickListener {
+        fun onClick(id: Int)
+    }
+
     fun attachListeners(tv: TextView, rb: RatingBar? = null) {
         tv.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
@@ -26,7 +30,7 @@ interface IValidationListeners {
         }
     }
 
-    fun attachListeners(tv: TextView, rg: RadioGroup?) {
+    fun attachListeners(tv: TextView, rg: RadioGroup?, listener: OnRadioGroupElementClickListener) {
         tv.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
                 fieldChanged()
@@ -38,7 +42,12 @@ interface IValidationListeners {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
         })
-        rg?.setOnCheckedChangeListener { _, _ -> fieldChanged() }
+        rg?.setOnCheckedChangeListener { _, id ->
+            run {
+                listener.onClick(id)
+                fieldChanged()
+            }
+        }
     }
 
     // Override and add logic to validate fields
