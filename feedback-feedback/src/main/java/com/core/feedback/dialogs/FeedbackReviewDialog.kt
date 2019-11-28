@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.core.feedback.R
 import com.core.feedback.IValidationListeners
+import com.core.feedback.Validator
 import com.core.feedback.setOnOneClickListener
 import com.hanks.lineheightedittext.LineHeightEditText
 import kotlinx.android.synthetic.main.dialog_feedback_review.view.*
@@ -22,7 +23,10 @@ class FeedbackReviewDialog(
     var onPhotoBtnClickAction: () -> Unit,
     var okBtnText: String?,
     var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
-    var closeBtnText: String?) : NoBGDialogFragment(), IValidationListeners {
+    var closeBtnText: String?,
+    var imageShouldBeFilled: Boolean = true,
+    var commentShouldBeFilled: Boolean = true
+) : NoBGDialogFragment(), IValidationListeners {
 
     private lateinit var reviewET: LineHeightEditText
     private lateinit var photoBTN: Button
@@ -74,5 +78,15 @@ class FeedbackReviewDialog(
     override fun fieldChanged() {
         // Validation
         sendBTN.isEnabled = reviewET.text?.isNotEmpty() ?: false || imageSelected
+
+        sendBTN.isEnabled = if (commentShouldBeFilled && imageShouldBeFilled) {
+            imageSelected && Validator.commentFilled(reviewET.text)
+        } else if (imageShouldBeFilled) {
+            imageSelected
+        } else if (commentShouldBeFilled) {
+            Validator.commentFilled(reviewET.text)
+        } else {
+            false
+        }
     }
 }

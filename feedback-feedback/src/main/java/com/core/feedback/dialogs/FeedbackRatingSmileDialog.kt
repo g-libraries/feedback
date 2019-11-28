@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.RadioGroup
 import com.core.feedback.R
 import com.core.feedback.IValidationListeners
+import com.core.feedback.Validator
 import com.core.feedback.setOnOneClickListener
 import com.hanks.lineheightedittext.LineHeightEditText
 import kotlinx.android.synthetic.main.dialog_feedback_partial_buttons.view.*
@@ -22,7 +23,9 @@ class FeedbackRatingSmileDialog(
     var ratingHint: String?,
     var okBtnText: String?,
     var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
-    var closeBtnText: String?
+    var closeBtnText: String?,
+    var ratingShouldBeFilled: Boolean = true,
+    var commentShouldBeFilled: Boolean = true
 ) : NoBGDialogFragment(), IValidationListeners {
 
     private lateinit var reviewET: LineHeightEditText
@@ -54,15 +57,18 @@ class FeedbackRatingSmileDialog(
         val neutralRB = view.dialog_fragment_feedback_button_neutral
         val positiveRB = view.dialog_fragment_feedback_button_positive
 
-        attachListeners(view.dialog_fragment_feedback_et_review, ratingRG, object : IValidationListeners.OnRadioGroupElementClickListener {
-            override fun onClick(id: Int) {
-                when (id) {
-                    R.id.dialog_fragment_feedback_button_negative -> rating = 0
-                    R.id.dialog_fragment_feedback_button_neutral -> rating = 1
-                    R.id.dialog_fragment_feedback_button_positive -> rating = 2
+        attachListeners(
+            view.dialog_fragment_feedback_et_review,
+            ratingRG,
+            object : IValidationListeners.OnRadioGroupElementClickListener {
+                override fun onClick(id: Int) {
+                    when (id) {
+                        R.id.dialog_fragment_feedback_button_negative -> rating = 0
+                        R.id.dialog_fragment_feedback_button_neutral -> rating = 1
+                        R.id.dialog_fragment_feedback_button_positive -> rating = 2
+                    }
                 }
-            }
-        })
+            })
 
         view.dialog_fragment_feedback_button_cancel.setOnOneClickListener { dismiss() }
 
@@ -95,6 +101,15 @@ class FeedbackRatingSmileDialog(
 
     override fun fieldChanged() {
         // Validation
-        sendBTN.isEnabled = rating >= 0 || reviewET.text?.isNotEmpty() ?: false
+
+        sendBTN.isEnabled = if (commentShouldBeFilled && ratingShouldBeFilled) {
+            rating > -1 && Validator.commentFilled(reviewET.text)
+        } else if (ratingShouldBeFilled) {
+            rating > -1
+        } else if (commentShouldBeFilled) {
+            Validator.commentFilled(reviewET.text)
+        } else {
+            false
+        }
     }
 }
