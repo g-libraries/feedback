@@ -32,6 +32,9 @@
         android:layout_height="wrap_content"
         android:text="@string/feedback_rating" />
 
-    <include layout="@layout/dialog_feedback_partial_buttons" />
+    <include
+        layout="@layout/dialog_feedback_partial_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

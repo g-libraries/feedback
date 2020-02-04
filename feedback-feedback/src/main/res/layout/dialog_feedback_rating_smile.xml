@@ -21,15 +21,15 @@
 
         <RadioButton
             android:id="@+id/dialog_fragment_feedback_button_positive"
-            style="@style/FeedbackRatingRadioButtonPositive"/>
+            style="@style/FeedbackRatingRadioButtonPositive" />
 
         <RadioButton
             android:id="@+id/dialog_fragment_feedback_button_neutral"
-            style="@style/FeedbackRatingRadioButtonNeutral"/>
+            style="@style/FeedbackRatingRadioButtonNeutral" />
 
         <RadioButton
             android:id="@+id/dialog_fragment_feedback_button_negative"
-            style="@style/FeedbackRatingRadioButtonNegative"/>
+            style="@style/FeedbackRatingRadioButtonNegative" />
 
     </RadioGroup>
 
@@ -47,6 +47,9 @@
         android:gravity="top|start"
         android:textAlignment="gravity" />
 
-    <include layout="@layout/dialog_feedback_partial_buttons" />
+    <include
+        layout="@layout/dialog_feedback_partial_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
