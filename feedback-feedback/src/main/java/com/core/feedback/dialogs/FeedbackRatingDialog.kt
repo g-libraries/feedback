@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RatingBar
-import com.core.feedback.R
+import android.widget.TextView
 import com.core.feedback.IValidationListeners
+import com.core.feedback.R
 import com.core.feedback.Validator
 import com.core.feedback.setOnOneClickListener
 import com.hanks.lineheightedittext.LineHeightEditText
@@ -18,46 +19,54 @@ import kotlinx.android.synthetic.main.dialog_feedback_rating.view.*
  * Classic Feedback dialog with stars
  */
 class FeedbackRatingDialog(
-        var title: String?,
-        var reviewHint: String?,
-        var ratingHint: String?,
-        var okBtnText: String?,
-        var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
-        var closeBtnText: String?,
-        var ratingShouldBeFilled: Boolean = true,
-        var commentShouldBeFilled: Boolean = true
+    var title: String?,
+    var reviewHint: String?,
+    var ratingHint: String?,
+    var okBtnText: String?,
+    var onOkBtnClickAction: (rating: Int, review: String) -> Unit,
+    var closeBtnText: String?,
+    var ratingEnabled: Boolean = true,
+    var ratingShouldBeFilled: Boolean = true,
+    var commentShouldBeFilled: Boolean = true
 ) : NoBGDialogFragment(), IValidationListeners {
 
     private lateinit var reviewET: LineHeightEditText
     private lateinit var ratingRB: RatingBar
+    private lateinit var ratingHintTV: TextView
     private lateinit var sendBTN: Button
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         val view = inflater.inflate(R.layout.dialog_feedback_rating, container)
 
         reviewET = view.dialog_fragment_feedback_et_review
         ratingRB = view.dialog_fragment_feedback_ratingbar
+        ratingHintTV = view.dialog_fragment_feedback_tv_rating_hint
         sendBTN = view.dialog_fragment_feedback_button_send
 
         view.dialog_fragment_feedback_title.text = title
         reviewET.hint = reviewHint
-        view.dialog_fragment_feedback_tv_rating_hint.text = ratingHint
+        ratingHintTV.text = ratingHint
         sendBTN.text = okBtnText
         view.dialog_fragment_feedback_button_cancel.text = closeBtnText
 
         attachListeners(view.dialog_fragment_feedback_et_review, ratingRB)
 
+        if (!ratingEnabled) {
+            ratingHintTV.visibility = View.GONE
+            ratingRB.visibility = View.GONE
+        }
+
         view.dialog_fragment_feedback_button_cancel.setOnOneClickListener { dismiss() }
 
         view.dialog_fragment_feedback_button_send.setOnOneClickListener {
             onOkBtnClickAction.invoke(
-                    view.dialog_fragment_feedback_ratingbar.rating.toInt(),
-                    view.dialog_fragment_feedback_et_review.text.toString()
+                view.dialog_fragment_feedback_ratingbar.rating.toInt(),
+                view.dialog_fragment_feedback_et_review.text.toString()
             )
             dismiss()
         }
@@ -68,10 +77,9 @@ class FeedbackRatingDialog(
 
     override fun fieldChanged() {
         // Validation
-
-        sendBTN.isEnabled = if (ratingShouldBeFilled && ratingShouldBeFilled) {
+        sendBTN.isEnabled = if (ratingEnabled && ratingShouldBeFilled && commentShouldBeFilled) {
             Validator.isBothFilled(ratingRB.rating, reviewET.text)
-        } else if (ratingShouldBeFilled) {
+        } else if (ratingEnabled && ratingShouldBeFilled) {
             Validator.ratingFilled(ratingRB.rating)
         } else if (commentShouldBeFilled) {
             Validator.commentFilled(reviewET.text)
