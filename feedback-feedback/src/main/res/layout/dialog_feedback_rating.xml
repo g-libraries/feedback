@@ -12,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.hanks.lineheightedittext.LineHeightEditText
-        android:id="@+id/dialog_fragment_feedback_et_review"
-        style="?feedbackEditText"
-        android:layout_width="match_parent"
-        android:gravity="top|start"
-        android:textAlignment="gravity" />
+    <TextView
+        android:id="@+id/dialog_fragment_feedback_tv_rating_hint"
+        style="?feedbackHintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_rating" />
 
     <RatingBar
         android:id="@+id/dialog_fragment_feedback_ratingbar"
@@ -25,12 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/dialog_fragment_feedback_tv_rating_hint"
-        style="?feedbackHintText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/feedback_rating" />
+    <com.hanks.lineheightedittext.LineHeightEditText
+        android:id="@+id/dialog_fragment_feedback_et_review"
+        style="?feedbackEditText"
+        android:layout_width="match_parent"
+        android:gravity="top|start"
+        android:textAlignment="gravity" />
 
     <include
         layout="@layout/dialog_feedback_partial_buttons"
